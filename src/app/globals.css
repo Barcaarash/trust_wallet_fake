@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Binance Plex';
+    src: url(./fonts/ad33b33b93e135d216bd.otf) format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Binance Plex';
+    src: url(./fonts/5f36217efbb124e1f06e.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Binance Plex';
+    src: url(./fonts/6563999da1964c37c508.otf) format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Binance Plex';
+    src: url(./fonts/850da36ebaa95f783ceb.otf) format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Geeza';
+    src: url(./fonts/8f89158e397ee29236ed.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+0600-06FF, U+0750-077F;
+}
+@font-face {
+    font-family: 'Geeza';
+    src: url(./fonts/a17b9c1448ef44367a5f.ttf) format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    unicode-range: U+0600-06FF, U+0750-077F;
+}
+@font-face {
+    font-family: 'Ping Fang';
+    src: url(./fonts/dd9993384c19c3bc71d3.ttf) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    unicode-range: U+4E00-9FFF, U+20000-2A6DF;
+}
+@font-face {
+    font-family: 'Ping Fang';
+    src: url(./fonts/8e752fd0ad0ea39bc216.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+4E00-9FFF, U+20000-2A6DF;
+}
+@font-face {
+    font-family: 'Ping Fang';
+    src: url(./fonts/e87a6b531eb2210f7d44.ttf) format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    unicode-range: U+4E00-9FFF, U+20000-2A6DF;
+}
+
+:root {
+    --background: #1b1b1b;
+    --foreground: #ededed;
+    --primary: #45ff91;
+    --glass: #242426;
+}
+
+body {
+    color: var(--foreground);
+    background: var(--background);
+    font-family: "Binance Plex","Geeza","Ping Fang";
+    min-height: -webkit-fill-available;
+}
+
+button,input,textarea {
+    @apply bg-glass rounded-full px-5 py-2
+}
+
+hr {
+    @apply bg-glass border-glass
+}
