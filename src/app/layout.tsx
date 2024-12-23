@@ -24,8 +24,8 @@ export default function RootLayout({
 			<meta name="format-detection" content="telephone=yes"/>
 			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 			<meta name="apple-mobile-web-app-capable" content="trust wallet"/>
-			<meta name="apple-mobile-web-app-status-bar-style" content="#242426"/>
-			<meta name="theme-color" content="#242426"/>
+			<meta name="apple-mobile-web-app-status-bar-style" content="#1b1b1b"/>
+			<meta name="theme-color" content="#1b1b1b"/>
 			<meta name="description"
 				 content="Crypto Trading Made Easy. Buy and sell with BingX, a secure platform that makes it easy to trade and store cryptocurrency."/>
 			<meta name="keywords" content="Ethereum Perpetual Futures, Safe Trading, Digital Assets"/>
