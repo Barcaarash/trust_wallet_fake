@@ -3,8 +3,9 @@ import {redirect} from "next/navigation";
 import {Settings} from "lucide-react";
 import React from "react";
 import PageTitle from "@/utils/page";
-import {IconBell, IconCoins} from "@/app/icons";
+import {IconCoins, IconSettings} from "@/app/icons";
 import Link from "next/link";
+import {appHeaders} from "@/vars";
 
 
 async function Layout(props: any) {
@@ -16,11 +17,16 @@ async function Layout(props: any) {
 
 
 	return (
-		<div className="bg-background min-h-screen text-white p-4" data-theme="dark">
+		<html>
+		<head>
+			{appHeaders}
+		</head>
+		<body>
+		<div className="bg-background min-h-screen text-white p-4 !pt-0" data-theme="dark">
 			{/* Header */}
-			<div className="flex justify-between items-center mb-6">
-				<Settings className="text-gray-400 w-6 h-6"/>
-				<h1 className="text-xl font-semibold"><PageTitle default={'HOME'} /></h1>
+			<div className="flex justify-between items-center mb-6 sticky top-0 bg-background z-10">
+				<IconSettings className="text-gray-400 w-6 h-6"/>
+				<h1 className="text-xl "><PageTitle default={'Home'}/></h1>
 				<Link href={'/addCoin'}>
 					<IconCoins className="text-gray-400 w-6 h-6"/>
 				</Link>
@@ -28,6 +34,8 @@ async function Layout(props: any) {
 
 			{props.children}
 		</div>
+		</body>
+		</html>
 	);
 }
 

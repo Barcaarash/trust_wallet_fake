@@ -357,13 +357,17 @@ export const IconNoTransactions = (props: SVG) => (
 )
 
 
-export const IconQRCode = (props: SVG) => (
-	<svg className="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 24 24"
-		xmlns="http://www.w3.org/2000/svg" {...props}>
-		<path fillRule="evenodd" clipRule="evenodd"
-			 d="M11 4H4V11H11V9H13V9.40723L9.40723 13H4V20H11V18H13V20H20V13H13V16H11V14.2357L14.2357 11H20V4H13V7H11V4ZM8.5 6.5H6.5V8.5H8.5V6.5ZM8.5 15.5H6.5V17.5H8.5V15.5ZM15.5 6.5H17.5V8.5H15.5V6.5ZM17.5 15.5H15.5V17.5H17.5V15.5Z"
-			 fill="currentColor"></path>
-	</svg>
+export const IconQRCode = (props: ComponentProps<'img'>) => (
+	<img
+		alt={'Settings'}
+		{...props}
+		style={{
+			objectFit: "contain",
+			transform: "scale(0.85)",
+			...(props.style || {})
+		}}
+		src={'/icons/qrcode.png'}
+	/>
 )
 
 export const IconBell = (props: SVG) => (
@@ -394,5 +398,17 @@ export const IconCoins = (props: ComponentProps<'img'>) => (
 			...(props.style || {})
 		}}
 		src={'/icons/coins.png'}
+	/>
+)
+
+export const IconSettings = (props: ComponentProps<'img'>) => (
+	<img
+		alt={'Settings'}
+		{...props}
+		style={{
+			objectFit: "contain",
+			...(props.style || {})
+		}}
+		src={'/icons/settings.png'}
 	/>
 )

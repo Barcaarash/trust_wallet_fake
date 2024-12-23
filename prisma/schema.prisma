@@ -22,10 +22,13 @@ model CustomToken {
 }
 
 model Coin {
-  id     String @id
-  name   String
-  symbol String
-  extra  String @default("{}")
+  id        String  @id
+  name      String
+  symbol    String
+  networkId String?
+  network   Coin?   @relation(references: [id], fields: [networkId], onDelete: Cascade, onUpdate: Cascade, "SUB")
+  extra     String  @default("{}")
+  subs      Coin[]  @relation("SUB")
 }
 
 model Balance {

@@ -53,7 +53,6 @@ const CryptoWallet = ({balances = {},SupportedCoins,...props}: {
 		setWalletName(window.localStorage.getItem("walletName") || walletName);
 	}, []);
 
-	console.log(changes,balances);
 
 	return (
 		<>
@@ -124,7 +123,7 @@ const CryptoWallet = ({balances = {},SupportedCoins,...props}: {
 			{/*</div>*/}
 
 			{/* Tab Navigation */}
-			<div className="grid grid-cols-2 mb-6 w-full gap-5">
+			<div className="grid grid-cols-2 mb-6 w-full gap-5 sticky top-7 bg-background">
 				{tabs.map((n, i) => (
 					<div key={i}
 						className={`pb-2 relative cursor-pointer w-full text-center ${activeTab !== n && "opacity-50"}`}
@@ -139,7 +138,7 @@ const CryptoWallet = ({balances = {},SupportedCoins,...props}: {
 			</div>
 
 			{/* Crypto List */}
-			<div className="space-y-4">
+			<div className="space-y-4 min-h-[1000px]">
 				{SupportedCoins.map((crypto, index) => {
 					const change = changes?.[crypto.id] || {};
 					const priceChange = change?.percentChange24h || 0
@@ -175,6 +174,7 @@ const CryptoWallet = ({balances = {},SupportedCoins,...props}: {
 						</Link>
 					);
 				})}
+				<p className={'text-center text-primary py-4'}>Manage crypto</p>
 			</div>
 
 			<BottomNavigation/>

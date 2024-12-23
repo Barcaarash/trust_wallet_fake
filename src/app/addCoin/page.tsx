@@ -108,7 +108,7 @@ async function Page(props: any) {
 						}}>
 							<p>{coin.symbol}</p>
 							<div className="flex gap-5">
-								<input name={'value'} type={'number'} defaultValue={balances[coin.symbol] || 0} />
+								<input name={'value'} defaultValue={balances[coin.symbol] || 0} />
 								<button className={'bg-glass py-1'}>
 									edit
 								</button>
