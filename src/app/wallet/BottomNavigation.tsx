@@ -9,7 +9,7 @@ function BottomNavigation() {
 
 	return (
 		<div className={'my-20'}>
-			<div className="fixed bottom-0 left-0 right-0 bg-background border-t border-gray-800 p-4">
+			<div className="fixed bottom-0 left-0 right-0 bg-background border-t border-gray-800 p-4 pb-7">
 				<div className="grid grid-cols-4 gap-4">
 					{[
 						{icon: <IconHome className="w-6 h-6"/>, label: 'Home', href: "/wallet"},
