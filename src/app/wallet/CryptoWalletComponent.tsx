@@ -138,7 +138,7 @@ const CryptoWallet = ({balances = {},SupportedCoins,...props}: {
 			</div>
 
 			{/* Crypto List */}
-			<div className="space-y-4 min-h-[1000px]">
+			<div className="space-y-4">
 				{SupportedCoins.map((crypto, index) => {
 					const change = changes?.[crypto.id] || {};
 					const priceChange = change?.percentChange24h || 0
