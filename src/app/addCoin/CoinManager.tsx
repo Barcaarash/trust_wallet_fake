@@ -8,11 +8,12 @@ import {useRouter} from "next/navigation";
 import {prismaQuery} from "@/backend/dbActions";
 import {restartMarketCapWs} from "@/app/addCoin/actions";
 
-function CoinManager({coin}: {
-	coin: PrismaType<'coin'> | PrismaType<'customToken'>
+function CoinManager({coin,isCoin}: {
+	coin: PrismaType<'coin'> | PrismaType<'customToken'>,
+	isCoin: boolean
 }) {
-	const isC = isCoin(coin);
-	const table = isC ? "coin" : "customToken";
+
+	const table = isCoin ? "coin" : "customToken";
 	const router = useRouter();
 
 	function reload() {
@@ -90,8 +91,3 @@ function CoinManager({coin}: {
 }
 
 export default CoinManager;
-
-
-function isCoin(o: any): o is PrismaType<'coin'> {
-	return o && typeof o === 'object' && 'subs' in o;
-}
