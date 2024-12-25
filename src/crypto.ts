@@ -184,10 +184,3 @@ export async function updateCustomTokens() {
 	triggerAllMarketCapChangeEvents();
 	global.LMCPassiveRunning = false;
 }
-
-
-
-
-export function restartMarketCapWs() {
-	global.LMCWs?.close();
-}

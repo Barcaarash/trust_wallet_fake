@@ -2,9 +2,10 @@ import SearchCustomToken from "@/app/addCoin/SearchCustomToken";
 import {revalidatePath} from "next/cache";
 import TokenIcon from "./TokenIcon";
 import {refreshSupportedCoins} from "@/backend/cryptoList";
-import {restartMarketCapWs} from "@/crypto";
-import {CoinImage} from "@/app/wallet/coin/CoinPart";
 import SearchStableCoin from "@/app/addCoin/SearchStableCoin";
+import CoinManager from "@/app/addCoin/CoinManager";
+import {restartMarketCapWs} from "@/app/addCoin/actions";
+import {ssr} from "@/utils/ssr";
 
 
 async function Page(props: any) {
@@ -22,28 +23,9 @@ async function Page(props: any) {
 				</summary>
 				<div key={tokens.length}
 					className={'flex items-center p-5 justify-start flex-col gap-5'}>
-					<div className="flex flex-col gap-5 w-full max-w-40">
+					<div className="flex flex-col gap-5 w-full">
 						{tokens.map((token, i) => (
-							<div key={i} className={'flex w-full justify-between items-center'}>
-								<p>{token.symbol}</p>
-								<div className="flex gap-1">
-									<TokenIcon token={token}/>
-									<button onClick={async () => {
-										'use server';
-
-										await prisma.customToken.delete({
-											where: {
-												id: token.id
-											}
-										})
-										await refreshSupportedCoins();
-										restartMarketCapWs();
-										revalidatePath(".")
-									}} className="bg-glass text-red-500">
-										X
-									</button>
-								</div>
-							</div>
+							<CoinManager key={i} coin={ssr(token)} />
 						))}
 					</div>
 					<SearchCustomToken/>
@@ -55,26 +37,7 @@ async function Page(props: any) {
 				</summary>
 				<div key={coins.length} className={'flex items-center p-5 justify-start flex-col gap-5'}>
 					{coins.map((coin, i) => (
-						<div key={i} className={'flex w-full justify-between items-center'}>
-							<p>{coin.symbol}</p>
-							<div className="flex gap-1">
-								<CoinImage coin={coin as any} />
-								<button onClick={async () => {
-									'use server';
-
-									await prisma.coin.delete({
-										where: {
-											id: coin.id
-										}
-									})
-									await refreshSupportedCoins();
-									restartMarketCapWs();
-									revalidatePath(".")
-								}} className="bg-glass text-red-500">
-									X
-								</button>
-							</div>
-						</div>
+						<CoinManager key={i} coin={ssr(coin)} />
 					))}
 					<br/>
 					<SearchStableCoin />

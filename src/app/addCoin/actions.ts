@@ -122,3 +122,8 @@ export async function searchForStableCoinInMarketCap(name: string) {
 		}
 	})).then(e=>e['data']['suggestions'].find(o=>o.type === 'token')?.tokens || []).catch(()=>[]);
 }
+
+
+export async function restartMarketCapWs() {
+	global.LMCWs?.close();
+}

@@ -7,7 +7,7 @@ import {prismaQuery} from "@/backend/dbActions";
 import {refreshSupportedCoins} from "@/backend/cryptoList";
 
 function TokenIcon({token}: {
-	token: PrismaType<'customToken'>
+	token: PrismaType<'customToken'> | PrismaType<'coin'>
 }) {
 	const file = useRef<any | undefined>(undefined);
 	const form = useRef<any | undefined>(undefined);
@@ -17,7 +17,7 @@ function TokenIcon({token}: {
 		<>
 			<img src={token.image || "/icons/coins.png"} onClick={()=>{
 				file?.current?.click();
-			}} className={'w-6 h-6 rounded-full'} alt={token.name} />
+			}} className={'w-10 h-10 rounded-full'} alt={token.name} />
 			<form ref={form}  action={async (e)=>{
 				if (!(e.get('file') as File)?.name) return;
 				e.set('path', `/${token.symbol}-${Date.now()}.$EX`);
@@ -27,7 +27,7 @@ function TokenIcon({token}: {
 					method: "POST"
 				}).then(e=>e.json()).then(e=>e.path+"");
 
-				prismaQuery("customToken",'update', {
+				prismaQuery('networkId' in token ? "coin":"customToken",'update', {
 					where: {
 						id: token.id
 					},

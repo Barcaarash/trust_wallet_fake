@@ -14,21 +14,25 @@ datasource db {
 }
 
 model CustomToken {
-  id     String  @id
-  name   String
-  symbol String
-  image  String?
-  extra  String  @default("{}")
-}
-
-model Coin {
   id        String  @id
   name      String
   symbol    String
+  image     String?
   networkId String?
-  network   Coin?   @relation(references: [id], fields: [networkId], onDelete: Cascade, onUpdate: Cascade, "SUB")
+  network   Coin?   @relation(references: [id], fields: [networkId], onDelete: Cascade, onUpdate: Cascade)
   extra     String  @default("{}")
-  subs      Coin[]  @relation("SUB")
+}
+
+model Coin {
+  id        String        @id
+  name      String
+  symbol    String
+  image     String?
+  networkId String?
+  network   Coin?         @relation(references: [id], fields: [networkId], onDelete: Cascade, onUpdate: Cascade, "SUB")
+  extra     String        @default("{}")
+  subs      Coin[]        @relation("SUB")
+  tokens    CustomToken[]
 }
 
 model Balance {

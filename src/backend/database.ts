@@ -34,10 +34,11 @@ const _prisma = instance.$extends({
 		coin: {
 			image: {
 				needs: {
-					id: true
+					id: true,
+					image: true
 				},
-				compute({id}) {
-					return `https://s2.coinmarketcap.com/static/img/coins/64x64/${id}.png`
+				compute({id,image}) {
+					return image || `https://s2.coinmarketcap.com/static/img/coins/64x64/${id}.png`
 				}
 			},
 			extra: {

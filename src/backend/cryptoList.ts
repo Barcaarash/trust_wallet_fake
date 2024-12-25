@@ -17,7 +17,7 @@ export async function refreshSupportedCoins(restartWs: boolean = false) {
 			symbol: o.symbol,
 			icon: o.image + "",
 			isDex: true,
-			network: undefined,
+			network: o.networkId ? +o.networkId:undefined,
 			display: true
 		}
 	))
@@ -29,10 +29,11 @@ export async function refreshSupportedCoins(restartWs: boolean = false) {
 			symbol: o.symbol,
 			icon: o.image + "",
 			isDex: false,
-			network: undefined,
+			network: o.networkId ? +o.networkId:undefined,
 			display: true
 		}))
 	]
+
 	if (restartWs) global.LMCWs?.close();
 	updateSupportCoin(final);
 	return final;

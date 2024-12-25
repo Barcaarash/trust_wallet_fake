@@ -39,7 +39,6 @@ const CryptoWallet = ({balances = {},SupportedCoins,...props}: {
 	const totalBalance = useMemo(()=>{
 		return (+(Object.entries(balances).reduce((t,[key,value]) => {
 			const coin = SupportedCoins.find(o=>o.symbol.toLowerCase()+"" === (key+"").toLowerCase());
-			if (!coin) console.log('coin not found',key,SupportedCoins);
 			const price = changes[coin?.id || -1]?.price || 0;
 			return t + ((+(value+"") || 0) * price);
 		},0).toFixed(2))).toLocaleString()
@@ -123,7 +122,7 @@ const CryptoWallet = ({balances = {},SupportedCoins,...props}: {
 			{/*</div>*/}
 
 			{/* Tab Navigation */}
-			<div className="grid grid-cols-2 mb-6 w-full gap-5 sticky top-7 bg-background">
+			<div className="grid grid-cols-2 mb-6 w-full gap-5 sticky top-10 py-2 !pt-0 bg-background z-10">
 				{tabs.map((n, i) => (
 					<div key={i}
 						className={`pb-2 relative cursor-pointer w-full text-center ${activeTab !== n && "opacity-50"}`}
