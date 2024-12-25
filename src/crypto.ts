@@ -154,7 +154,7 @@ function handleCryptoSetEvents() {
 	}))
 }
 
-global.LMCPassiveThread = setInterval(updateCustomTokens,60000);
+global.LMCPassiveThread = setInterval(updateCustomTokens,2 * 60000);
 export async function updateCustomTokens() {
 	if (global.LMCPassiveRunning) return;
 	global.LMCPassiveRunning = true;

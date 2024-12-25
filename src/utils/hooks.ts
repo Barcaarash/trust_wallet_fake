@@ -51,3 +51,21 @@ export function useChanges(init: typeof global.LMCData) {
 
 	return changes;
 }
+
+
+export function useScroll() {
+	const [scroll, setScroll] = useState({x:0,y:0});
+	useEffect(() => {
+		const event = ()=>{
+			setScroll({
+				y: window.scrollY,
+				x: window.scrollX
+			})
+		}
+		window.addEventListener('scroll',event);
+		return ()=>window.removeEventListener('scroll',event);
+	}, []);
+
+
+	return scroll;
+}

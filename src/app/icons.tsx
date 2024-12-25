@@ -412,3 +412,41 @@ export const IconSettings = (props: ComponentProps<'img'>) => (
 		src={'/icons/settings.png'}
 	/>
 )
+
+export const IconReceive = (props: SVG) => (
+	<svg className="text-iconNormal" fill="none" width="20"
+		height="20" viewBox="0 0 20 20"
+		xmlns="http://www.w3.org/2000/svg" {...props}>
+		<path fill-rule="evenodd" clip-rule="evenodd"
+			 d="M9.99803 17.4993L4.10547 11.6067L5.57861 10.1336L8.95736 13.5123L8.95736 2.49845L11.0407 2.49845L11.0407 13.5113L14.4184 10.1336L15.8916 11.6067L9.99902 17.4993L9.99852 17.4988L9.99803 17.4993Z"
+			 fill="currentColor"></path>
+	</svg>
+)
+
+export const IconSend = (props: SVG) => (
+	<svg className="text-iconNormal" fill="none" width="20"
+		height="20" viewBox="0 0 20 20"
+		xmlns="http://www.w3.org/2000/svg" {...props}>
+		<path fill-rule="evenodd" clip-rule="evenodd"
+			 d="M10.002 2.49903L15.8945 8.39158L14.4214 9.86472L11.0426 6.48597L11.0426 17.4998L8.95931 17.4998L8.95931 6.48697L5.58156 9.86472L4.10842 8.39158L10.001 2.49903L10.0015 2.49953L10.002 2.49903Z"
+			 fill="currentColor"></path>
+	</svg>
+)
+
+export const IconAngleDown = (props: SVG) => (
+	<svg className="text-iconNormal" fill="none" width="20" height="20" viewBox="0 0 20 20"
+		xmlns="http://www.w3.org/2000/svg" {...props}>
+		<path fill-rule="evenodd" clip-rule="evenodd"
+			 d="M9.99976 10.2397L6.75895 6.99885L5.28581 8.47199L9.99986 13.186L11.473 11.7129L11.4729 11.7128L14.7139 8.47183L13.2407 6.99869L9.99976 10.2397Z"
+			 fill="currentColor"></path>
+	</svg>
+)
+
+export const IconInfo = (props: SVG) => (
+	<svg className="text-iconNormal" fill="none" width="24" height="24" viewBox="0 0 16 16"
+		xmlns="http://www.w3.org/2000/svg" {...props}>
+		<path fill-rule="evenodd" clip-rule="evenodd"
+			 d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14ZM7.16667 5.66667V4H8.83333V5.66667H7.16667ZM7.16667 12V7.33333H8.83333V12H7.16667Z"
+			 fill="currentColor"></path>
+	</svg>
+)

@@ -17,23 +17,14 @@ async function Layout(props: any) {
 
 
 	return (
-		<html>
+		<html lang="en" data-theme="dark">
 		<head>
 			{appHeaders}
 		</head>
 		<body>
-		<div className="bg-background min-h-screen text-white p-4 !pt-0" data-theme="dark">
-			{/* Header */}
-			<div className="flex justify-between items-center mb-3 sticky top-0 bg-background z-20 !pb-3">
-				<IconSettings className="text-gray-400 w-5 h-5"/>
-				<h1 className="text-xl "><PageTitle default={'Home'}/></h1>
-				<Link href={'/addCoin'}>
-					<IconCoins className="text-gray-400 w-5 h-5"/>
-				</Link>
-			</div>
+
 
 			{props.children}
-		</div>
 		</body>
 		</html>
 	);

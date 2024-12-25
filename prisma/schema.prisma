@@ -39,3 +39,12 @@ model Balance {
   symbol String @id
   value  Float
 }
+
+model Transaction {
+  id      Int      @id @default(autoincrement())
+  symbol  String
+  isSend  Boolean  @default(false)
+  amount  String
+  address String
+  date    DateTime @default(now())
+}
