@@ -12,10 +12,14 @@ function ActionButtons(props: {
 			{[
 				{icon: <ArrowUp/>, label: 'Send', href: "/wallet/send"},
 				{icon: <ArrowDown/>, label: 'Receive', href: "/wallet/receive"},
-				...(props.single ? [{
-					icon: <IconSwap/>, label: 'Swap'
-				}] : []),
-				{icon: <IconBuy/>, label: 'Buy'},
+				...(props.single ? [
+					{icon: <IconBuy/>, label: 'Buy'},
+					{
+						icon: <IconSwap/>, label: 'Swap'
+					},
+				] : [
+					{icon: <IconBuy/>, label: 'Buy'}
+				]),
 				{icon: <IconSell className={'p-0.5'}/>, label: 'Sell'},
 				...(!props.single ? [
 					{icon: <IconHistory/>, label: 'History'}

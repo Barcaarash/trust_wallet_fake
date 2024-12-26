@@ -34,8 +34,10 @@ async function Page(props: any) {
 
 			{/* Header */}
 			<div className={`flex justify-between items-center mb-3 z-20 !pb-5 p-4 !pt-0 bg-background relative`}>
-				<IconArrowRight className="text-gray-400 rotate-180 w-5 h-5"/>
-				<div className={'flex flex-col justify-center items-center flex-grow absolute left-0 right-0 mx-auto'}>
+				<Link href={'/wallet'} className={'z-50'}>
+					<IconArrowRight className="text-gray-400 rotate-180 w-5 h-5"/>
+				</Link>
+				<div className={'flex flex-col justify-center items-center flex-grow absolute left-0 right-0 mx-auto -top-1'}>
 					<h1 className="text-lg relative">{coin.symbol}</h1>
 					<p className={'text-xs text-textThird flex items-center gap-2 relative '}>
 						<span className={'absolute right-3'}>COIN</span>

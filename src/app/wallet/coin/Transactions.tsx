@@ -48,13 +48,13 @@ function Transactions({transactions, onClick}: {
 												<div className="flex items-center space-x-2.5 w-[220px]">
 													<div className="flex w-7.5 h-7.5 justify-center items-center">
 														<div className="flex w-full justify-center items-center h-full bg-glass rounded-full">
-															{trx.isSend ? <IconReceive/> : <IconSend/>}
+															{trx.isSend ? <IconSend/>:<IconReceive/>}
 														</div>
 													</div>
 													<div className="flex flex-col">
 														<div className="flex items-center space-x-1.25"><p
 															data-testid="tx-type"
-															className="body-text text-textPrimary font-medium   text-unset">Receive</p>
+															className="body-text text-textPrimary font-medium   text-unset">{trx.isSend ? "Send":"Receive"}</p>
 														</div>
 														<div data-testid="tx-item-subtitle"
 															className="caption-text body-text text-textThird  text-textSecondary font-normal flex flex-nowrap text-unset">
