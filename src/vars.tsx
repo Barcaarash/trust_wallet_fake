@@ -91,7 +91,7 @@ export const ApiRoutes = {
 } as const;
 
 
-export const appHeaders = (
+export const AppHeaders = (
 	<>
 		<link rel='stylesheet' href='/copied.css'/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
@@ -108,5 +108,6 @@ export const appHeaders = (
 			 content="Crypto Trading Made Easy. Buy and sell with BingX, a secure platform that makes it easy to trade and store cryptocurrency."/>
 		<meta name="keywords" content="Ethereum Perpetual Futures, Safe Trading, Digital Assets"/>
 		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<link rel="manifest" href="https://m.bingx.com/json/pwa.manifest100.json"/>
 	</>
 )

@@ -1,10 +1,10 @@
-import {appHeaders} from "@/vars";
+import {AppHeaders} from "@/vars";
 
 function Layout(props: any) {
 	return (
 		<html lang="en" data-theme="dark">
 		<head>
-			{appHeaders}
+			{AppHeaders}
 		</head>
 		<body>
 		{props.children}

@@ -2,11 +2,9 @@ import type {Metadata} from "next";
 import "./globals.css";
 import {initMarketCapWebsocket} from "@/crypto";
 import {initDB} from "@/backend/database";
-import {appHeaders} from "@/vars";
+import {AppHeaders} from "@/vars";
+import {FormatDetectionMeta} from "next/dist/lib/metadata/generate/basic";
 
-export const metadata: Metadata = {
-	title: "Home"
-};
 
 export default function RootLayout({
 								children,
@@ -16,7 +14,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" data-theme="dark">
 		<head>
-			{appHeaders}
+			{AppHeaders}
 		</head>
 		<body>
 		{children}
@@ -35,5 +33,8 @@ if (!global.wsInit) {
 	global.wsInit = true;
 }
 
+export const metadata = {
+	title: "Home"
+}
 
 export const dynamic = "force-dynamic"

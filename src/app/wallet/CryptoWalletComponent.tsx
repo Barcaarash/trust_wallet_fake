@@ -74,7 +74,7 @@ const CryptoWallet = ({balances = {}, SupportedCoins, ...props}: {
 		<div className="bg-background min-h-screen text-white" data-theme="dark">
 
 			{/* Header */}
-			<div className={`flex justify-between items-center mb-3 sticky top-0  z-20 !pb-5 p-4 !pt-0 ${y > 1 ? "bg-glass" : "bg-background"}`}>
+			<div className={`flex justify-between items-center mb-3 sticky top-0  z-20 !pb-5 p-4 !pt-0 bg-background`}>
 				<IconSettings className="text-gray-400 w-5 h-5"/>
 				<h1 className="text-xl ">{y > 110 ? "$" + totalBalance : <PageTitle default={'Home'}/>}</h1>
 				<Link href={'/addCoin'}>
@@ -154,7 +154,7 @@ const CryptoWallet = ({balances = {}, SupportedCoins, ...props}: {
 				{/*</div>*/}
 
 				{/* Tab Navigation */}
-				<div className={`grid grid-cols-2 mb-6 w-full gap-5 sticky top-12 py-2 !pt-0 ${y > 300 ? "bg-glass border-b border-white/5" : "bg-background"} z-10`}>
+				<div className={`grid grid-cols-2 mb-6 w-full gap-5 sticky top-12 py-2 !pt-0 bg-background ${y > 300 ? "border-b border-white/5": ""} z-10`}>
 					{tabs.map((n, i) => (
 						<div key={i}
 							className={`pb-2 relative cursor-pointer w-full text-center ${activeTab !== n && "opacity-50"}`}
