@@ -9,7 +9,8 @@ export function convertCustomTokenSearchDataToCustomToken(results: Awaited<Retur
 		name: o.baseTokenName,
 		symbol: o.baseTokenSymbol,
 		image: 'id' in o?.baseToken ? `https://s2.coinmarketcap.com/static/img/coins/64x64/${o.baseToken.id}.png`:null,
-		extra: o
+		extra: o,
+		networkId: o.platFormCryptoId+""
 	}))
 }
 
@@ -22,6 +23,7 @@ export function convertStableCoinSearchToStableCoin(results: Awaited<ReturnType<
 		name: o.name,
 		symbol: o.symbol,
 		image: `https://s2.coinmarketcap.com/static/img/coins/64x64/${o.id}.png`,
-		extra: o
+		extra: o,
+		networkId: null
 	}))
 }

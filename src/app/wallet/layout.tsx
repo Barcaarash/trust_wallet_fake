@@ -5,7 +5,7 @@ import React from "react";
 import PageTitle from "@/utils/page";
 import {IconCoins, IconSettings} from "@/app/icons";
 import Link from "next/link";
-import {appHeaders} from "@/vars";
+import {AppHeaders} from "@/vars";
 
 
 async function Layout(props: any) {
@@ -19,7 +19,7 @@ async function Layout(props: any) {
 	return (
 		<html lang="en" data-theme="dark">
 		<head>
-			{appHeaders}
+			{AppHeaders}
 		</head>
 		<body>
 

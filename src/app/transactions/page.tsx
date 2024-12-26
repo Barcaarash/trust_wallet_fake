@@ -34,8 +34,6 @@ async function Page(props: any) {
 					isSend: formData['isSend']+"" === "true"
 				}
 
-				console.log(data);
-
 				await prisma.transaction.create({
 					data
 				});
