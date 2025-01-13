@@ -46,7 +46,7 @@ function CoinManager({coin,table}: {
 				</div>
 			</div>
 			<div className="flex gap-2 flex-grow justify-end">
-				<TokenIcon token={coin}/>
+				<TokenIcon token={coin} table={table} />
 
 				<button onClick={async () => {
 					const value = window.prompt(`Enter coin network:\nENTER EXACT SYMBOL which is should exists in this list\nfor remove network just type null\nExample: TRX`);

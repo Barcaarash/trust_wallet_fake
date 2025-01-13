@@ -6,8 +6,9 @@ import {useRouter} from "next/navigation";
 import {prismaQuery} from "@/backend/dbActions";
 import {refreshSupportedCoins} from "@/backend/cryptoList";
 
-function TokenIcon({token}: {
-	token: PrismaType<'customToken'> | PrismaType<'coin'>
+function TokenIcon({token,table = 'coin'}: {
+	token: PrismaType<'customToken'> | PrismaType<'coin'>,
+	table?: "coin" | "customToken"
 }) {
 	const file = useRef<any | undefined>(undefined);
 	const form = useRef<any | undefined>(undefined);
@@ -27,7 +28,7 @@ function TokenIcon({token}: {
 					method: "POST"
 				}).then(e=>e.json()).then(e=>e.path+"");
 
-				prismaQuery('networkId' in token ? "coin":"customToken",'update', {
+				prismaQuery(table,'update', {
 					where: {
 						id: token.id
 					},
