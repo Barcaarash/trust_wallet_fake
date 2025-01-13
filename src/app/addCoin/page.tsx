@@ -25,7 +25,7 @@ async function Page(props: any) {
 					className={'flex items-center p-5 justify-start flex-col gap-5'}>
 					<div className="flex flex-col gap-5 w-full">
 						{tokens.map((token, i) => (
-							<CoinManager key={i} coin={ssr(token)} isCoin={false} />
+							<CoinManager key={i} coin={ssr(token)} table={"customToken"} />
 						))}
 					</div>
 					<SearchCustomToken/>
@@ -37,7 +37,7 @@ async function Page(props: any) {
 				</summary>
 				<div key={coins.length} className={'flex items-center p-5 justify-start flex-col gap-5'}>
 					{coins.map((coin, i) => (
-						<CoinManager key={i} coin={ssr(coin)} isCoin={true} />
+						<CoinManager key={i} coin={ssr(coin)} table={'coin'} />
 					))}
 					<br/>
 					<SearchStableCoin />
