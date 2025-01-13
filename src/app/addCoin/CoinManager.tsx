@@ -53,7 +53,7 @@ function CoinManager({coin,isCoin}: {
 				<button onClick={async () => {
 					const value = window.prompt(`Enter coin network:\nENTER EXACT SYMBOL which is should exists in this list\nfor remove network just type null\nExample: TRX`);
 					if (value) {
-						const network = await prismaQuery("coin", 'findFirst', {
+						const network = await prismaQuery(table, 'findFirst', {
 							where: {
 								symbol: value
 							}
